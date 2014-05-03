@@ -1,0 +1,18 @@
+{
+    "uuid": "7264c141-7061-45c9-92c7-df06fbc46237",
+    "capabilities": [
+        ""
+    ],
+    "companyName": "pavel.bashmakov@gmail.com",
+    "resources": {
+        "media": []
+    },
+    "shortName": "TestP",
+    "appKeys": {},
+    "versionCode": 1,
+    "longName": "TestP",
+    "watchapp": {
+        "watchface": false
+    },
+    "versionLabel": "1.0"
+}
