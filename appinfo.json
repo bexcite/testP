@@ -10,7 +10,7 @@
         "media": [
 
         {
-            "type" : "png-trans",
+            "type" : "png",
             "name" : "IMAGE_ICON_TREE",
             "file" : "images/icon-tree-282.png",
             "menuIcon" : true
