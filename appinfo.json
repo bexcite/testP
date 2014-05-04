@@ -7,7 +7,19 @@
     },
     "appKeys": {},
     "resources": {
-        "media": []
+        "media": [
+          {
+            "type": "font",
+            "name": "FONT_GOTHAM_LIGHT_31",
+            "file": "fonts/gotham_light_31.ttf"
+          },
+          {
+            "type": "font",
+            "name": "FONT_GOTHAM_BOLD_36",
+            "file": "fonts/gotham_bold_36.ttf"
+          }
+        
+        ]
     },
     "uuid": "7264c141-7061-45c9-92c7-df06fbc46237",
     "capabilities": [
