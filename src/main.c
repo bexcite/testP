@@ -28,7 +28,7 @@ char* fonts[] = {
 uint16_t current_font_idx = 0;
 
 static void select_click_handler(ClickRecognizerRef recognizer, void* context) {
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "Select click");
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Select click 1");
   
   
   current_font_idx++;
