@@ -8,6 +8,15 @@
     "appKeys": {},
     "resources": {
         "media": [
+
+        {
+            "type" : "png",
+            "name" : "IMAGE_ICON_TREE",
+            "file" : "images/icon-tree-28.png",
+            "menuIcon" : true
+
+            },
+
           {
             "type": "font",
             "name": "FONT_GOTHAM_LIGHT_31",
@@ -18,7 +27,7 @@
             "name": "FONT_GOTHAM_BOLD_36",
             "file": "fonts/gotham_bold_36.ttf"
           }
-        
+
         ]
     },
     "uuid": "7264c141-7061-45c9-92c7-df06fbc46237",
