@@ -139,6 +139,7 @@ void init(void) {
 void deinit(void) {
   text_layer_destroy(text_layer);
   text_layer_destroy(time_layer);
+  tick_timer_service_unsubscribe();
   window_destroy(window);
 }
 
