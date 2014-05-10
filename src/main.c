@@ -14,7 +14,7 @@ char* fonts[] = {
   FONT_KEY_GOTHIC_24_BOLD,
   FONT_KEY_GOTHIC_28,
   FONT_KEY_GOTHIC_28_BOLD,
-  FONT_KEY_BITHAM_30_BLACK,
+  /*FONT_KEY_BITHAM_30_BLACK,
   FONT_KEY_BITHAM_42_BOLD,
   FONT_KEY_BITHAM_42_LIGHT,
   FONT_KEY_BITHAM_42_MEDIUM_NUMBERS,
@@ -23,9 +23,10 @@ char* fonts[] = {
   FONT_KEY_BITHAM_18_LIGHT_SUBSET,
   FONT_KEY_ROBOTO_CONDENSED_21,
   FONT_KEY_ROBOTO_BOLD_SUBSET_49,
+*/  
   FONT_KEY_DROID_SERIF_28_BOLD
 };
-uint16_t current_font_idx = 0;
+uint16_t current_font_idx = 8; // FONT_KEY_GOTHIC_28_BOLD
 
 static void select_click_handler(ClickRecognizerRef recognizer, void* context) {
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Select click 12");
@@ -66,7 +67,7 @@ static void config_provider(void *context) {
 
 static void handle_second_tick(struct tm *tick_time, TimeUnits units_changed) {
   static char time_text[] = "00:00:01";
-  APP_LOG(APP_LOG_LEVEL_DEBUG, time_text);
+  //APP_LOG(APP_LOG_LEVEL_DEBUG, time_text);
   
   strftime(time_text, sizeof(time_text), "%T", tick_time);
   text_layer_set_text(time_layer, time_text);
@@ -102,19 +103,21 @@ void init(void) {
   
   //Get some info about layers
   GRect bounds = layer_get_bounds(text_layer_get_layer(text_layer));
-  char *log_str = (char *) malloc(sizeof(char) * 200);
-  snprintf(log_str, 200, "text_layer.bounds = x%d y%d w%d h%d", bounds.origin.x, bounds.origin.y, bounds.size.w, bounds.size.h);
+  char *log_str = (char *) malloc(sizeof(char) * 180);
+  snprintf(log_str, 180, "text_layer.bounds = x%d y%d w%d h%d", bounds.origin.x, bounds.origin.y, bounds.size.w, bounds.size.h);
 //  APP_LOG(APP_LOG_LEVEL_DEBUG, "text_layer.bounds = x%d y%d", bounds.origin.x, bounds.origin.y);
   
   
-  //text_layer_set_text(text_layer, log_str);
-  text_layer_set_text(text_layer, fonts[current_font_idx]);
+  text_layer_set_text(text_layer, log_str);
+  strcat(log_str, ", ");
+  strcat(log_str, fonts[current_font_idx]);
+  //text_layer_set_text(text_layer, fonts[current_font_idx]);
   
   layer_add_child(window_layer, text_layer_get_layer(text_layer));
   
   
   // Create a time_layer
-  time_layer = text_layer_create(GRect(29, 54, 144-40, 168-54));
+  time_layer = text_layer_create(GRect(29, 84, 144-40, 168-54));
   text_layer_set_text_color(time_layer, GColorBlack);
   text_layer_set_background_color(time_layer, GColorClear);
   text_layer_set_font(time_layer, fonts_get_system_font(fonts[current_font_idx]));

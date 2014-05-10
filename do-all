@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import subprocess
+
+subprocess.call(["pebble", "build"])
+subprocess.call(["pebble", "install"])
+
+# "--debug"
+subprocess.call(["pebble",  "logs"])
+
+
